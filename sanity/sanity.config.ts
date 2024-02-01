@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'ecommerce Mike',
 
-  projectId: 'f5u609gw',
+  projectId: 'i5d1wq3t',
   dataset: 'production',
 
   plugins: [deskTool()],

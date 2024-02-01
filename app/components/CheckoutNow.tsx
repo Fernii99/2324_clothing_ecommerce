@@ -29,6 +29,7 @@ export default function CheckoutNow({
   };
   return (
     <Button
+      className="border-solid border-2 border-white hover:bg-primary hover:text-black hover:border-none hover:border-black rounded-xl "
       variant="outline"
       onClick={() => {
         buyNow(product.price_id);

@@ -1,9 +1,3 @@
-import Link from "next/link";
-import { simplifiedProduct } from "../interface";
-import { client } from "../lib/sanity";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-
 export default async function Newest() {
 
   return (
@@ -17,9 +11,6 @@ export default async function Newest() {
                 </div>
                 <div className="mt-10 py-10 border-t items-center justify-between sm:flex">
                     <p className="text-black">© 2024 Kaotika Inc. All rights reserved.</p>
-                    <ul className="flex flex-wrap items-center gap-4 mt-6 sm:text-sm sm:mt-0">
-                        
-                    </ul>
                 </div>
             </div>
         </footer>

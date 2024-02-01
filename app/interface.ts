@@ -1,10 +1,8 @@
-export interface simplifiedProduct {
+export interface userData {
   _id: string;
-  imageUrl: string;
-  price: number;
-  slug: string;
-  categoryName: string;
-  name: string;
+  picture: string;
+  name: number;
+  description: string;
 }
 
 export interface fullProduct {
