@@ -5,47 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ShoppingBag } from "lucide-react";
 import { useShoppingCart } from "use-shopping-cart";
-import { client } from "../lib/sanity";
-import { userData } from "../interface";
 
-
-
-
-async function getUsers() {
-  const query = `*[_type == "user"]{
-    _id,
-    name,
-    description,
-    image
-  }`;
-
-  const data = await client.fetch(query);
-  console.log("********************* DATA at the get user ******************* ")
-  console.log(data)
-  return data;
-}
-
-
-
-export default async function Navbar() {
+export default  function Navbar() {
   const links = [
     {name: 'Home',  href: '/'},
+    { name: 'OCeOEne', href: '/OCeOEne' },
+    { name: 'Ferniiiiiii', href: '/Ferniiiiiii' },
     {name: 'Contact', href: '/Contact'},
   ]
-
-  const users: userData[] = await getUsers();
-
-  console.log("users")
-  console.log(users)
-
-  users.map((user) => {
-    console.log("************************** USER ******************")
-    console.log(user)
-    links.splice(1, -1, { name: `${user.name}`,  href: `/${user.name}`});
-  })
-
-  console.log("links");
-  console.log(links);
 
   const pathname = usePathname()
   const { handleCartClick } = useShoppingCart();

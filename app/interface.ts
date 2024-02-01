@@ -5,6 +5,15 @@ export interface userData {
   description: string;
 }
 
+export interface simplifiedProduct {
+  _id: string;
+  imageUrl: string;
+  name: number;
+  price: string;
+  categoryName: string;
+  slug: string;
+}
+
 export interface fullProduct {
   _id: string;
   images: any;

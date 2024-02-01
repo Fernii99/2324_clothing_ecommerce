@@ -4,8 +4,11 @@ import Link from "next/link";
 import bg from '../../assets/vestidoRopa.jpg'
 
 export default async function Hero() {
+
+
   return (
      
+    
       <div className="h-[80vh] ">
 
         <div className="flex w-full justify-center align-center h-full  mt-8">
