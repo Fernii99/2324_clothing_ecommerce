@@ -1,4 +1,4 @@
-// File: /home/igorocon/Documentos/ecommerce-template-3/app/page.tsx
+// File: /Users/asierfernandez/Desktop/Reto Patronaje/2324_clothing_ecommerce/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

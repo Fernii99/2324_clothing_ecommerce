@@ -24,9 +24,9 @@ export default async function Newest() {
 
   return (
     <div>
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto w-4/6 px-4 py-16 sm:px-6 sm:py-24  lg:px-8">
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl text-primary font-bold tracking-tight text-gray-900">
+          <h2 className="text-2xl text-white font-bold tracking-tight">
             Our Newest products
           </h2>
 
@@ -53,16 +53,14 @@ export default async function Newest() {
 
               <div className="mt-4 flex justify-between">
                 <div>
-                  <h3 className="text-sm text-gray-700">
+                  <h3 className="text-sm text-white">
                     <Link href={`/product/${product.slug}`}>
                       {product.name}
                     </Link>
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    {product.categoryName}
-                  </p>
+                  
                 </div>
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-medium text-gray-300">
                   ${product.price}
                 </p>
               </div>
