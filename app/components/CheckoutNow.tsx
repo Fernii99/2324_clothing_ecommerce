@@ -35,7 +35,7 @@ export default function CheckoutNow({
         buyNow(product.price_id);
       }}
     >
-      Checkout Now
+      Comprar ya
     </Button>
   );
 }

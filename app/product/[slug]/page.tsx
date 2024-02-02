@@ -68,10 +68,6 @@ export default async function ProductPge({
                   ${data.price + 30}
                 </span>
               </div>
-
-              <span className="text-sm text-white">
-                Compralo ahora, llevate dos niños
-              </span>
             </div>
 
             <div className="mb-6 flex items-center gap-2 text-white">

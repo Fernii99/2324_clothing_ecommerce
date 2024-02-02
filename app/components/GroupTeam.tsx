@@ -1,30 +1,26 @@
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { client } from "../lib/sanity";
+import { userData } from "../interface";
+import Image from "next/image";
 
-export default function GroupTeam (){
+async function getData() {
+  const query = `*[_type == "profile"] {
+        _id,
+        name,
+        "imageUrl": image.asset->url,
+        description
+      }`;
 
-    const people = [
-        {
-          id: 1,
-          name: 'Persona 1',
-          edad: '20',
-          imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
-        {
-            id:2,
-            name: 'Persona 2',
-            edad: '21',
-            imageUrl:
-                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
-        {
-            id:3,
-            name: 'Persona 3',
-            edad: '20',
-            imageUrl:
-                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
-      ]
+  const data = await client.fetch(query);
+  
+ 
+  return data;
+}
+
+export default async function GroupTeam (){
+
+  const data: userData[] = await getData();
 
     return(
         
@@ -37,21 +33,35 @@ export default function GroupTeam (){
                     </p>
                   </div>
                   <div className="flex flex-row w-full mt-5">
-                    {people.map((person) => (
-                    <div key={person.id} className="border-solid border-2 border-black rounded-xl w-2/3 p-5 mx-8 ">
-                        <div>
-                            <div className="flex gap-x-6">
-                              <img className="h-40 w-40 rounded-3xl" src={person.imageUrl} alt="" />
-                              <div >
-                                  <h3 className="text-3xl font-semibold text-gray-900">{person.name}</h3>
-                                  <p className="text-2xl text-gray-900"> {person.edad} </p>
-                                  <div className="flex flex-row mt-11 align-center justify-end">
-                                    <span className=" text-black">Ver más</span> 
-                                    <ArrowRight className="w-4 h-4 text-black mt-1" />
-                                  </div>
+                    {data.map((person) => (
+                      <div key={person._id} className="border-solid border-2 border-black rounded-xl w-1/3 p-5 mx-4 ">
+                          <Link href={`/${person.name}`}>
+                        <div className="flex flex-row">
+                            <div className="flex flex-col gap-x-6 ">
+                              <Image
+                                src={person.imageUrl}
+                                alt="Profile Picture"
+                                className="flex bg-destructive"
+                                width={200}
+                                height={200}
+                               
+                              />
+                            </div>
+                            <div>
+                              <div className="flex-col pl-2" >
+                                  <h3 className="text-3xl font-semibold text-gray-900">
+                                    {person.name}
+                                  </h3>
+                                    <span className="flex text-sm">{person.description.substring(0, 100)}...</span>
+                                    <div className="flex flex-row mt-6 align-center justify-end">
+
+                                      <span className=" text-black">Ver más</span> 
+                                      <ArrowRight className="w-4 h-4 text-black mt-1" />
+                                    </div>
                               </div>
                             </div>
                         </div> 
+                        </Link>
                     </div>
                     ))}
                     </div>
