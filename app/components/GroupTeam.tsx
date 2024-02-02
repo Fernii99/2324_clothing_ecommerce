@@ -39,7 +39,7 @@ export default async function GroupTeam (){
                         <div className="flex flex-row">
                             <div className="flex flex-col gap-x-6 ">
                               <Image
-                                src={person.imageUrl}
+                                src={person.image}
                                 alt="Profile Picture"
                                 className="flex bg-destructive"
                                 width={200}

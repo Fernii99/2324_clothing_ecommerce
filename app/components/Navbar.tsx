@@ -11,6 +11,7 @@ export default  function Navbar() {
     {name: 'Home',  href: '/'},
     { name: 'OCeOEne', href: '/OCeOEne' },
     { name: 'Ferniiiiiii', href: '/Ferniiiiiii' },
+    { name: 'Mendoza', href: '/Mendoza' },
   ]
 
   const pathname = usePathname()

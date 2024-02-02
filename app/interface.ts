@@ -1,6 +1,6 @@
 export interface userData {
   _id: string;
-  picture: string;
+  image: string;
   name: number;
   description: string;
 }
@@ -12,6 +12,7 @@ export interface simplifiedProduct {
   price: string;
   categoryName: string;
   slug: string;
+  description: string;
 }
 
 export interface fullProduct {

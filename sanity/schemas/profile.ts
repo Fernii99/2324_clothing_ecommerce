@@ -9,7 +9,7 @@ export default {
         title: 'Your Name',
       },
       {
-        name: 'image',
+        name: 'picture',
         type: 'image',
         title: 'Product Images',
       },

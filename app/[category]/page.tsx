@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { userData } from "../interface";
+import { simplifiedProduct, userData } from "../interface";
 import { client } from "../lib/sanity";
 import Image from "next/image";
 
@@ -25,7 +25,7 @@ export default async function CategoryPage({
 }: {
   params: { category: string };
 }) {
-  const data: userData[] = await getData(params.category);
+  const data: simplifiedProduct[] = await getData(params.category);
 
   return (
     <div className="">
