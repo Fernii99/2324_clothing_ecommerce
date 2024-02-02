@@ -1,6 +1,6 @@
 export interface userData {
   _id: string;
-  image: string;
+  imageUrl: string;
   name: number;
   description: string;
 }
